@@ -1,0 +1,22 @@
+problemas -
+dados de clientes duplicados
+dificuldade para ver o histórico de um cliente
+lentidão para montar pacotes de viagem
+erros operacionais (vendiam passagens que já não estava disponível)
+incapacidade de gerar relatórios confiáveis
+
+
+entidades -
+
+- clientes (clientes que compraram com a nossa companhia)
+- viagem (engloba os clientes com a passagem hospedagem)
+- passagem (produto, irá guardar preço, destino de viagem)
+- hospedagem (produto, irá guardar o hotel, tipo de serviço, preços)
+- Disponibilidade_passagem(tipo um estoque para guardar se as passagens estão disponível)
+- Disponibilidade_hospedagem
+- funcionário (funcionários da companhia aérea)
+- venda (guardar o cliente, a viagem e o preço total, o funcionário que atendeu, o preço e se está pago
+- endereço (para guardar informações de endereço dos clientes
+- telefone (para guardar os telefones de clientes)
+- passaporte (para guardar os passaportes dos clientes
+- forma_de_pagamento (guardar os tipos possíveis de forma de pagamento aceitas
