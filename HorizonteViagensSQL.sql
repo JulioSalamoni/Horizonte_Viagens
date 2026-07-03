@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS HORIZONTEVIAGENS.FUNCIONARIO (
   email_funcionario VARCHAR(50) NOT NULL,
   cep_funcionario VARCHAR(10) NULL,
   data_nimento_funcionario DATE NOT NULL,
-  sexo_funcionario ENUM("Mulino", "Feminino", "Outros") NOT NULL,
+  sexo_funcionario ENUM("Masculino", "Feminino", "Outros") NOT NULL,
   nome_social_funcionario VARCHAR(50) NULL,
   data_admissao DATE NULL DEFAULT current_timestamp,
   data_demissao DATE NULL,
@@ -236,4 +236,99 @@ CREATE TABLE IF NOT EXISTS HORIZONTEVIAGENS.VENDA (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- --------------------------------------- INSERTS ---------------------------------------------------------------------------------------------
 
+
+INSERT INTO FUNCIONARIO
+(nome_funcionario, cpf_funcionario, email_funcionario, cep_funcionario,
+data_nimento_funcionario, sexo_funcionario, nome_social_funcionario,
+data_admissao, data_demissao, pis, salario)
+VALUES
+('Julio Cezar Salamoni', '12345678901', 'julio.salamoni@horizonte.com', '89010000',
+'2003-08-06', 'Masculino', NULL, '2022-01-10', NULL, '12345678901', 4200.00),
+
+('Mariana Rocha', '23456789012', 'mariana.rocha@horizonte.com', '89020000',
+'2005-08-22', 'Feminino', NULL, '2023-03-01', NULL, '23456789012', 3900.00),
+
+('Gabriel Caruso', '34567890123', 'gabriel.caruso@horizonte.com', '89030000',
+'2004-11-12', 'Masculino', NULL, '2024-02-15', NULL, '34567890123', 3500.00),
+
+('Larissa Sazacalatacatis', '45678901234', 'larissa.szk@horizonte.com', '89040000',
+'2004-06-27', 'Feminino', NULL, '2021-09-20', NULL, '45678901234', 4800.00),
+
+('Alex Pinto', '56789012345', 'alex.pinto@horizonte.com', '89050000',
+'2005-04-30', 'Masculino', NULL, '2020-05-18', NULL, '56789012345', 5500.00);
+
+--
+
+INSERT INTO FORMA_DE_PAGAMENTO
+(descricao_forma_de_pagamento)
+VALUES
+('Dinheiro'),
+('PIX'),
+('Cartão de Débito'),
+('Cartão de Crédito'),
+('Boleto Bancário'),
+('Transferência Bancária');
+
+-- 
+
+INSERT INTO HOSPEDAGEM
+(descricao_hospedagem, valor_hospedagem, detalhes_hospedagem)
+VALUES
+('Hotel Copacabana Palace - Rio de Janeiro', 1450.00,
+'Quarto luxo com café da manhã e vista para o mar.'),
+
+('Hotel Fasano - São Paulo', 980.00,
+'Suíte executiva com café da manhã incluso.'),
+
+('Resort Costão do Santinho - Florianópolis', 1750.00,
+'Pacote all inclusive com acesso às piscinas.'),
+
+('Hotel Wish Foz do Iguaçu', 890.00,
+'Quarto casal com café da manhã e estacionamento.'),
+
+('Hotel Vila Galé Salvador', 760.00,
+'Quarto standard com piscina e academia.');
+
+--
+
+INSERT INTO DISPONIBILIDADE_HOSPEDAGEM
+(id_hospedagem, quantidade_disponivel_hospedagem)
+VALUES
+(1,20),
+(2,15),
+(3,10),
+(4,18),
+(5,25);
+
+--
+
+INSERT INTO PASSAGEM
+(descricao_passagem, valor_passagem, detalhes_passagem)
+VALUES
+('São Paulo → Rio de Janeiro', 420.00,
+'Voo direto com bagagem de mão inclusa.'),
+
+('Curitiba → Florianópolis', 280.00,
+'Voo econômico com duração de 50 minutos.'),
+
+('São Paulo → Foz do Iguaçu', 560.00,
+'Voo direto com bagagem despachada.'),
+
+('Belo Horizonte → Salvador', 710.00,
+'Voo com uma conexão e bagagem inclusa.'),
+
+('Brasília → Recife', 680.00,
+'Voo direto em classe econômica.');
+
+-- 
+
+INSERT INTO DISPONIBILIDADE_PASSAGEM
+(id_passagem, quantidade_disponivel_passagem)
+VALUES
+(1,60),
+(2,45),
+(3,35),
+(4,50),
+(5,40);
